@@ -23,10 +23,10 @@ def recommend(movie):
         recommended_poster_movies.append(fetch_poster(movie_id))
     return recommended_movies,recommended_poster_movies
 
-movie_dict = pickle.load(open('/workspaces/movie_recommender_system/movies_dict.pkl','rb'))
-movies = pd.DataFrame(movie_dict)
+movies_dict = pickle.load(open(movie_dict.pkl','rb'))
+movies = pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open('/workspaces/movie_recommender_system/similarity.pkl','rb'))
+similarity = pickle.load(open('similarity.pkl','rb'))
 
 searched_movie = st.selectbox('Enter the name of the movie?',movies['title'].values)
 
